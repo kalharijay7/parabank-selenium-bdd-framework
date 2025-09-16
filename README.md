@@ -1,7 +1,8 @@
 # NopCommerce Selenium Framework
 
-This repository contains a **Selenium + Java automation framework** for the [nopCommerce demo site](https://demo.nopcommerce.com/).  
+This repository contains a **Selenium + Java automation framework** for the [nopcommerce demo site](https://demo.nopcommerce.com/).  
 It demonstrates **automation best practices** using the **Page Object Model (POM)**, TestNG, Maven, and utility classes for configuration and data management.
+This references the YouTube tutorial [End to End Selenium Framework | E-Commerce Project | Complete Selenium Framework from Scratch](https://www.youtube.com/watch?v=2yDLEgSTG_c&list=PPSV&t=4448s). Still, I have used a different demo e-commerce site and have integrated the best practices while building the framework.
 
 ---
 
