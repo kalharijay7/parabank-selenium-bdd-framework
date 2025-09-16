@@ -1,0 +1,42 @@
+# ------------------------
+# Java / Maven / Eclipse
+# ------------------------
+
+# Maven target build directory
+/target/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# Eclipse launch configs
+*.launch
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific (VS Code, IntelliJ, etc. — in case you open later)
+.vscode/
+.idea/
+*.iml
+
+# Backup files
+*.bak
+*.tmp
+~*
+
+# Test reports
+/test-output/
+surefire-reports/
+extent-reports/
+
+# Other generated files
+bin/
