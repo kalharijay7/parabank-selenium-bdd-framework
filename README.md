@@ -53,33 +53,3 @@ test-output/ # Auto-generated reports
 ### Using Maven
 ```bash
 mvn clean test
-
----
-### Configuration
-
-Example config.properties:
-baseUrl=https://demo.nopcommerce.com/
-browser=chrome
-implicitWait=10
-explicitWait=20
-headless=false
-username=testuser@example.com
-password=Test@123
-
-🔹 Tools & Technologies
-
-Java
-Selenium WebDriver
-TestNG
-Maven
-Apache POI (Excel)
-ExtentReports / TestNG Reports
-
-🔹 Contribution
-
-This is a personal learning project / portfolio repo. Contributions are welcome for improvements, but please fork and test before submitting pull requests.
-
-🔹 Author
-
-Kalhari Jayasinghe – QA Automation Engineer
-[GitHub Profile](https://github.com/kalharijay7)
