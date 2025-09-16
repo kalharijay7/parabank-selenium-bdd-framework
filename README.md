@@ -54,7 +54,8 @@ test-output/ # Auto-generated reports
 ```bash
 mvn clean test
 
-## 🔹 Configuration
+---
+### Configuration
 
 Example config.properties:
 baseUrl=https://demo.nopcommerce.com/
