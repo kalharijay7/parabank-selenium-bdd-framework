@@ -40,7 +40,7 @@ test-output/ # Auto-generated reports
 - Java 8+  
 - Maven 3+  
 - WebDriverManager
-- Eclipse IDE (or IntelliJ/VS Code)  
+- Eclipse IDE
 
 ---
 
