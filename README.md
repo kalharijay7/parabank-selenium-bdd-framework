@@ -19,7 +19,7 @@ This references the YouTube tutorial [End to End Selenium Framework | E-Commerce
 
 ## 🔹 Project Structure
 
-src/
+```src/
 ├── main/java/com/nopcommerce/
 │ ├── base/ # BasePage, BaseTest
 │ ├── pages/ # Page objects
@@ -32,7 +32,7 @@ src/
 config/
 └── config.properties # Base URL, browser, credentials
 test-output/ # Auto-generated reports
-
+```
 
 ---
 
