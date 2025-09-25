@@ -39,7 +39,7 @@ test-output/ # Auto-generated reports
 ## 🔹 Prerequisites
 - Java 8+  
 - Maven 3+  
-- ChromeDriver/GeckoDriver in PATH (or managed by WebDriverManager)  
+- WebDriverManager
 - Eclipse IDE (or IntelliJ/VS Code)  
 
 ---
