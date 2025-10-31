@@ -40,3 +40,6 @@ extent-reports/
 
 # Other generated files
 bin/
+
+#metadata
+.metadata/
