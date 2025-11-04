@@ -12,7 +12,6 @@ public class BaseTest {
 
 	protected WebDriver driver;
 	
-	@BeforeMethod
 	public void setup() {
 		
 		driver = BrowserDriver.getDriver(ConfigReader.get("browser"));
@@ -20,9 +19,10 @@ public class BaseTest {
 		//Initialize implicit wait
 		int implicitWait = Integer.parseInt(ConfigReader.get("implicitWait"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
+		
+		System.out.println("Setup is hit");
 	}
 	
-	@AfterMethod
 	public void tearDown() {
 		
 		if(driver != null) {
