@@ -3,16 +3,14 @@ package com.parabank.base;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import com.parabank.driver.BrowserDriver;
 import com.parabank.utils.ConfigReader;
 
 public class BaseTest {
 
-	protected WebDriver driver;
+	protected static WebDriver driver;
 	
-	public void setup() {
+	public static void setup() {
 		
 		driver = BrowserDriver.getDriver(ConfigReader.get("browser"));
 		
@@ -23,7 +21,11 @@ public class BaseTest {
 		System.out.println("Setup is hit");
 	}
 	
-	public void tearDown() {
+	public static WebDriver getDriver() {
+		return driver;
+	}
+	
+	public static void tearDown() {
 		
 		if(driver != null) {
 			driver.quit();

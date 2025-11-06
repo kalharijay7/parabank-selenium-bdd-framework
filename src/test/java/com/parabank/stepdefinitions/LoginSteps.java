@@ -1,6 +1,7 @@
 package com.parabank.stepdefinitions;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import com.parabank.base.BaseTest;
@@ -13,10 +14,14 @@ import io.cucumber.java.en.When;
 public class LoginSteps extends BaseTest {
 
 	private LoginPage loginPage;
+	private WebDriver driver;
+	
+	public LoginSteps () {
+		driver = BaseTest.getDriver();
+	}
 	
 	@Given("the user is on the home page")
 	public void the_user_is_on_the_home_page() {
-		setup();
 		driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		loginPage = new LoginPage(driver);
 	}
