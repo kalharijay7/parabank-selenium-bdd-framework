@@ -4,15 +4,15 @@ import java.util.HashMap;
 
 public class TestContext {
 	
-	protected static HashMap<String, String> inputData = new HashMap<String, String>();
+	protected static HashMap<String, String> data = new HashMap<String, String>();
 	
-	public static void setInputData (String key, String value) {
+	public static void setData (String key, String value) {
 		
-		inputData.put(key, value);
+		data.put(key, value);
 	}
 
 	public static String get(String key) {
 		
-		return inputData.get(key);
+		return data.get(key);
 	}
 }
