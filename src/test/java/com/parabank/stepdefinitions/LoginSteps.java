@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import com.parabank.base.BaseTest;
+import com.parabank.base.TestContext;
 import com.parabank.pages.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -25,8 +26,11 @@ public class LoginSteps extends BaseTest {
 		loginPage = new LoginPage(driver);
 	}
 	
-	@When("the user enters valid username {string} and password {string}")
-	public void the_user_enters_valid_username_and_passwrod(String username, String password) {
+	@When("the user enters valid credentials")
+	public void the_user_enters_valid_username_and_passwrod() {
+		String username = (String)TestContext.get("username");
+		String password = (String)TestContext.get("password");
+		
 		loginPage.enterUsername(username);
 		loginPage.enterPassword(password);
 	}
