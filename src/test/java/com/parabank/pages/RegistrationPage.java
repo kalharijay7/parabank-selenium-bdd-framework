@@ -1,5 +1,7 @@
 package com.parabank.pages;
 
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -52,24 +54,24 @@ public class RegistrationPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public boolean registerNewUser(String username, String password) {
+	public boolean registerNewUser(Map<String, String> userData) {
 		
 		driver.get(ConfigReader.get("userRegisterUrl"));
 		
-		firstName.sendKeys("Admin");
-		lastName.sendKeys("Test");
-		streetAddress.sendKeys("123/B, Test Street, Test City");
-		city.sendKeys("Test City");
-		state.sendKeys("Test State");
-		zipCode.sendKeys("10000");
-		phoneNumber.sendKeys("12345678");
-		ssn.sendKeys("1234567");
-		userName.sendKeys(username);
-		userPassword.sendKeys(password);
-		repeatedPassword.sendKeys(password);
+		firstName.sendKeys(userData.get("firstName"));
+		lastName.sendKeys(userData.get("lastName"));
+		streetAddress.sendKeys(userData.get("address"));
+		city.sendKeys(userData.get("city"));
+		state.sendKeys(userData.get("state"));
+		zipCode.sendKeys(userData.get("address"));
+		phoneNumber.sendKeys(userData.get("phone"));
+		ssn.sendKeys(userData.get("ssn"));
+		userName.sendKeys(userData.get("username"));
+		userPassword.sendKeys(userData.get("password"));
+		repeatedPassword.sendKeys(userData.get("confirmPassword"));
 		
 		submitButton.click();
 		
-		return driver.getPageSource().contains("Welcome " + username);
+		return driver.getPageSource().contains("Welcome " + userData.get("username"));
 	}
 }

@@ -1,0 +1,16 @@
+[
+	{
+		"testName": "valid_user",
+		"firstName": "Admin",
+		"lastName": "Jenna",
+		"address": "No. 123, ABC street",
+		"city": "ABC City",
+		"state": "ABC State",
+		"zipCode": "10000",
+		"phone": "1234567890",
+		"ssn": "111-111111",
+		"username": "user001",
+		"password": "Pass123",
+		"confirmPassword": "Pass123"
+	}
+]

@@ -1,9 +1,12 @@
 package com.parabank.hooks;
 
+import java.util.Map;
+
 import com.parabank.base.BaseTest;
 import com.parabank.base.TestContext;
 import com.parabank.pages.RegistrationPage;
 import com.parabank.utils.ConfigReader;
+import com.parabank.utils.JsonDataReader;
 import com.parabank.utils.RegisterUserApi;
 
 import io.cucumber.java.After;
@@ -19,21 +22,27 @@ public class Hooks {
 	
 	@Before("@login")
 	public void registerUserBeforeLogin() {
+		//Initializing driver instance
 		BaseTest.setup();
 		
-		String username = ConfigReader.get("username") + System.currentTimeMillis();
-		String password = ConfigReader.get("password");
+		String filepath = ConfigReader.get("userRegistrationData");
+		Map<String, String> userData = JsonDataReader.getDataByTestName(filepath, "valid_user");
+		
+		userData.put("username", userData.get("username") + System.currentTimeMillis());
 		
 		var registerPage = new RegistrationPage(BaseTest.getDriver());
-		boolean isUserCreated = registerPage.registerNewUser(username, password);
+		boolean isUserCreated = registerPage.registerNewUser(userData);
+		
+		//Quitting driver instance
+		BaseTest.tearDown();
 		
 		//Exit scenario execution if user registration fails
 		if(!isUserCreated) {
 			throw new RuntimeException("Failed to create the user. Aborting the login script execution...");
 		}
 		
-		TestContext.setData("username", username);
-		TestContext.setData("password", password);
+		TestContext.setData("username", userData.get("username"));
+		TestContext.setData("password", userData.get("password"));
 	}
 	
 	@After
